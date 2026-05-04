@@ -1,0 +1,333 @@
+/* Google Font - Tekstur Streetwear */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap');
+
+:root {
+    --primary: #ff0000; /* Merah Khas Insurgent */
+    --bg: #0a0a0a;
+    --text: #ffffff;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 2px solid #222;
+    background: rgba(10, 10, 10, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+/* HERO SECTION */
+#home {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUKbYXBuyCT-7s-p5xi6C1wWG9OQKHUGON0w&s') center/cover;
+}
+
+#home h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    border: 2px solid var(--primary);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+}
+
+/* FILTER KATEGORI */
+.kategori {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.kategori button {
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 25px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.kategori button:hover, .kategori button.active {
+    background: white;
+    color: black;
+}
+
+/* PRODUK GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 15px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #home h2 { font-size: 2.5rem; }
+    .menu { display: none; } /* Simpel toggle menu logic needed */
+} 
+
+/* ===== QRIS SECTION ===== */
+#qris {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.qris-box {
+    background: #111;
+    border: 1px solid #222;
+    max-width: 350px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    position: relative;
+}
+
+/* garis merah khas brand */
+.qris-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 12px 12px 0 0;
+}
+
+.qris-box h2 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.qris-box p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* QR IMAGE */
+.qr-img {
+    width: 220px;
+    margin: 20px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.btn-bayar {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-bayar:hover {
+    background: transparent;
+    border: 1px solid var(--primary);
+}
+
+/* SUCCESS BOX */
+#sukses {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #111;
+    border: 1px solid var(--primary);
+    color: #00ff88;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeIn 0.5s ease;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CONTACT ===== */
+#contact {
+    padding: 80px 5%;
+    background: #0a0a0a;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+#contact h2 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    opacity: 0.7;
+    margin: 5px 0;
+}
+
+/* FORM */
+form {
+    margin-top: 25px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #222;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+textarea {
+    margin-top: 10px;
+    min-height: 120px;
+    resize: none;
+}
+
+/* FOCUS EFFECT */
+input:focus, textarea:focus {
+    border-color: var(--primary);
+}
+
+/* BUTTON */
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: transparent;
+    border: 1px solid var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+}
