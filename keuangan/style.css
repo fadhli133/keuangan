@@ -1,0 +1,317 @@
+/* @import font modern dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Akses Warna Elegan */
+    --primary: #10b981;       /* Emerald */
+    --secondary: #6366f1;     /* Indigo */
+    --warning: #f59e0b;       /* Amber */
+    --danger: #f43f5e;        /* Rose */
+    
+    --input-bg: rgba(15, 23, 42, 0.6);
+}
+
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding-bottom: 60px;
+    backdrop-filter: blur(20px);
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Elegan */
+header {
+    padding: 50px 0 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+header h1 span {
+    background: linear-gradient(to right, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* Dashboard Grid Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 35px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Efek Glassmorphism untuk Kartu (Card) */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    display: block;
+}
+
+/* Form Input Minimalis & Elegan */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.form-group-inline {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr auto;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 500px) {
+    .form-group-inline {
+        grid-template-columns: 1fr;
+    }
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input, select {
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, select:focus {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+/* Desain Tombol (Buttons) */
+button {
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+.btn-secondary {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    box-shadow: 0 10px 15px -5px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.btn-danger {
+    background: rgba(244, 63, 94, 0.1);
+    color: var(--danger);
+    border: 1px solid rgba(244, 63, 94, 0.2) !important;
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* Hasil Output Anggaran */
+.hidden { display: none !important; }
+
+.result-container {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.budget-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-radius: 16px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.budget-card span {
+    font-weight: 500;
+}
+
+.budget-card strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.item-1 { background: rgba(16, 185, 129, 0.1); color: #34d399; border-left: 4px solid var(--primary); }
+.item-2 { background: rgba(245, 158, 11, 0.1); color: #fbbf24; border-left: 4px solid var(--warning); }
+.item-3 { background: rgba(99, 102, 241, 0.1); color: #818cf8; border-left: 4px solid var(--secondary); }
+
+/* Grafik Container */
+.chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+}
+
+/* Riwayat Pengeluaran (Tracker) */
+.expense-history {
+    border-top: 1px dashed var(--card-border);
+    margin-top: 30px;
+    padding-top: 25px;
+}
+
+.expense-history h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+#expense-list {
+    list-style: none;
+    max-height: 240px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Kustomisasi Scrollbar untuk List */
+#expense-list::-webkit-scrollbar {
+    width: 6px;
+}
+#expense-list::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 10px;
+}
+
+#expense-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    animation: fadeIn 0.4s ease;
+}
+
+#expense-list li span {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+#expense-list li strong {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.total-expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 20px 0 5px 0;
+    color: #f43f5e;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Animasi Halus saat data ditambahkan */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
